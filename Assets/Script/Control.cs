@@ -5,8 +5,8 @@ using UnityEngine;
 public class Control : MonoBehaviour
 {
 
-    float speed = 1.0f;
-    int damage = 10;
+    public float speed;
+    public int health = 100;
     Animator animator;
 
     private void Start()
@@ -23,31 +23,36 @@ public class Control : MonoBehaviour
             // 현재 애니메이션의 진행도가 1보다 크거나 같다면 User Interface를 비활성화하도록 설계하였습니다.
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
+                health -= 10;
                 animator.Rebind();
             }
         }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-
-        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Player")
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+        RaycastHit hit;
+        Ray ray = new Ray(transform.position,transform.forward);
+        
+        if (Physics.Raycast(ray, out hit, 1.5f))
         {
             speed = 0.0f;
-            animator.SetBool("Attack", true);
             
+            animator.SetBool("Attack", true);
         }
-        
-        
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Exit")
+        else
         {
-            animator.SetBool("Attack", false);
-            speed = 1.0f;
+            speed = 3.0f;
+            animator.SetBool("Attack", false); 
         }
+
+        Debug.DrawRay(transform.position, transform.forward * 1.5f);
     }
+
+   
+
+  
+    
 
 
 }

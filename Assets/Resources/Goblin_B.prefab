@@ -2296,6 +2296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16aef1a5400f7174f9e50b367767cd9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  health: 1000
 --- !u!54 &8717813422990681327
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2310,7 +2312,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &7921799859159667936
 BoxCollider:
@@ -2323,8 +2325,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 5, z: 0.2}
-  m_Center: {x: 0, y: 2, z: 3}
+  m_Size: {x: 1, y: 5, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &186020
 GameObject:
   m_ObjectHideFlags: 0
