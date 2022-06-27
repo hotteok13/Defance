@@ -1495,7 +1495,7 @@ ModelImporter:
       name: attack1
       takeName: Goblin_armature|ArmatureAction
       internalID: 0
-      firstFrame: 140
+      firstFrame: 137
       lastFrame: 161
       wrapMode: 0
       orientationOffsetY: 0
@@ -1503,7 +1503,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

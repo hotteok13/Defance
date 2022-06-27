@@ -14,7 +14,7 @@ public class CreateMonster : MonoBehaviour
     }
     public void HapineCreate()
     {
-        Instantiate(Resources.Load<GameObject>("Hapine"), new Vector3(0, 2, 13), Quaternion.Euler(-60, 0, 0));
+        Instantiate(Resources.Load<GameObject>("Hapine"), new Vector3(0, 2, 10), Quaternion.Euler(0, 0, 0));
     }
 
     public void EnemyInstance()
