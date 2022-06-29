@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 enum State
 {
@@ -15,14 +16,18 @@ public class Control : MonoBehaviour
     State state;
     public float speed;
     private float saveSpeed;
-    public int health = 100;
+    public float health=100.0f;
+
     Animator animator;
     public LayerMask [] layemask;
+    public Slider healthGauge;
+
     public int attack;
     private int count = 1;
 
     private void Start()
     {
+        healthGauge.value = health/health;
         animator = GetComponent<Animator>();
         saveSpeed = speed;
     }
@@ -37,6 +42,9 @@ public class Control : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+
         RaycastHit hit; 
         Ray ray = new Ray(transform.position,transform.forward);
 
@@ -54,6 +62,7 @@ public class Control : MonoBehaviour
                 {
                     animator.Rebind();
                     hit.transform.GetComponent<MonsterControl>().health -= attack;
+                    healthGauge.value = health / 100;
                 }
             }
             

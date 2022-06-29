@@ -2316,6 +2316,7 @@ MonoBehaviour:
     m_Bits: 8
   - serializedVersion: 2
     m_Bits: 64
+  healthGauge: {fileID: 8649575947797761042}
   attack: 10
 --- !u!1 &186020
 GameObject:

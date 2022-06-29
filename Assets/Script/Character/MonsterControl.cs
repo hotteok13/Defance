@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterControl : MonoBehaviour
 {
 
     public float speed;
     private float saveSpeed;
-    public int health = 100;
+    public float health = 100.0f;
     Animator animator;
     public LayerMask [] layemask;
     public int attack;
-    
+    public Slider healthGauge;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         saveSpeed = speed;
+        healthGauge.value = health / health;
     }
 
     void Update()
@@ -31,7 +34,7 @@ public class MonsterControl : MonoBehaviour
         Ray ray = new Ray(transform.position,transform.forward);
 
 
-
+        healthGauge.value = health / 100;
         if (Physics.Raycast(ray, out hit, 2.0f, layemask[0]))
         {
 
@@ -43,6 +46,7 @@ public class MonsterControl : MonoBehaviour
                 {
                     animator.Rebind();
                     hit.transform.GetComponent<Control>().health -= attack;
+                    
                 }
             }
             speed = 0.0f;
