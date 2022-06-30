@@ -2,16 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 [System.Serializable]
-public class Infomation : MonoBehaviour
+public class Data
 {
     public int price;
-    public int money;
-    public Text moneyUI;
 
-    public void Start()
+    public Sprite shape;
+    public Sprite priceSprite;
+}
+
+
+public class Infomation : MonoBehaviour
+{
+    public Data [] data;
+    public Image [] monsterUI;
+    public Image [] priceUI;
+
+    private void Start()
     {
-        moneyUI.text=money.ToString();
+        for(int i = 0; i < data.Length; i++)
+        {
+            monsterUI[i].sprite = data[i].shape;
+            priceUI[i].sprite = data[i].priceSprite;
+
+        }
+        
     }
 }
