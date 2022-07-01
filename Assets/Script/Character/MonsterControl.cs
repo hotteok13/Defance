@@ -26,6 +26,7 @@ public class MonsterControl : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if (health <= 0)
         {
+            DataManager.instance.MoneyIncrease(100);
             Destroy(gameObject);
         }
 
@@ -37,7 +38,7 @@ public class MonsterControl : MonoBehaviour
         healthGauge.value = health / 100;
         if (Physics.Raycast(ray, out hit, 2.0f, layemask[0]))
         {
-
+            
             
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("attack1"))
             {

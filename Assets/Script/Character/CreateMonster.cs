@@ -7,8 +7,12 @@ public class CreateMonster : MonoBehaviour
 {
     public Button goblineButton;
     public Button hapineButton;
+    public Button dragonButton;
+
     private bool goblineCheak=true;
     private bool hapineCheak=true;
+    private bool dragonCheak=true;
+    
     public void Start()
     {
         InvokeRepeating("EnemyInstance", 0, 5);
@@ -26,7 +30,13 @@ public class CreateMonster : MonoBehaviour
         hapineCheak = false;
         StartCoroutine(Wait(5.0f));
     }
+    public void DragonCreate()
+    {
 
+        Instantiate(Resources.Load<GameObject>("Dragon"), new Vector3(0, 0, 13), Quaternion.Euler(0, 0, 0));
+        dragonCheak = false;
+        StartCoroutine(Wait(3.0f));
+    }
     public void EnemyInstance()
     {
         if (!GameManager.instace.state) return;
@@ -67,6 +77,20 @@ public class CreateMonster : MonoBehaviour
             //yield return new WaitForSeconds(timer);
             hapineButton.interactable = true;
             hapineCheak = true;
+        }
+        else if (dragonCheak == false)
+        {
+            dragonButton.interactable = false;
+
+            while (timer > 1.0f)
+            {
+                timer -= Time.deltaTime;
+                dragonButton.image.fillAmount = (1.0f / timer);
+                yield return new WaitForFixedUpdate();
+            }
+            //yield return new WaitForSeconds(timer);
+            dragonButton.interactable = true;
+            dragonCheak = true;
         }
     }
 }
