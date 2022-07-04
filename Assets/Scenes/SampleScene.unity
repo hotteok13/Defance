@@ -672,6 +672,7 @@ MonoBehaviour:
   goblineButton: {fileID: 298998483}
   hapineButton: {fileID: 1093623178}
   dragonButton: {fileID: 145485231}
+  reaperButton: {fileID: 491551776}
 --- !u!1001 &198020130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1203,6 +1204,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491551776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+  m_PrefabInstance: {fileID: 1694975545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &504445423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1282,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -1283,11 +1299,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DragonCreate
+      value: Create
       objectReference: {fileID: 0}
     - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: CreateMonster, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Dragon
       objectReference: {fileID: 0}
     - target: {fileID: 755970486750175503, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_Name
@@ -2719,6 +2739,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1fc406c242ee834e9fc7ef6db696527, type: 3}
+--- !u!1 &1081825855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1398649941229316, guid: 48dc9b485d9b74443b656c1fbd5ad707, type: 3}
+  m_PrefabInstance: {fileID: 889547145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1081825858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081825855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d04ba457cbba44f8d2e1318a9d6cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 2000
+  teamCheak: 0
+--- !u!65 &1081825859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081825855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.799999, y: 20.8, z: 19.599998}
+  m_Center: {x: 0, y: 10.4, z: 0}
 --- !u!114 &1093623178 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
@@ -3789,6 +3841,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1118322824}
     m_Modifications:
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 174405294}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Create
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Reaper
+      objectReference: {fileID: 0}
     - target: {fileID: 755970486750175503, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_Name
       value: Repper Create Button
@@ -3907,12 +3975,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1118322824}
     m_Modifications:
     - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 174405294}
     - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HapineCreate
+      value: Create
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Hapine
       objectReference: {fileID: 0}
     - target: {fileID: 755970486750175503, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_Name
@@ -4345,8 +4421,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.799999, y: 20.8, z: 21}
+  m_Size: {x: 10.799999, y: 20.8, z: 25}
   m_Center: {x: 0, y: 10.4, z: 0}
+--- !u!114 &1921004014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741329328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d04ba457cbba44f8d2e1318a9d6cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1000
+  teamCheak: 1
 --- !u!1 &1928868314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,9 +4888,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 1118322824}
     m_Modifications:
     - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 174405294}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Create
+      objectReference: {fileID: 0}
+    - target: {fileID: 755970486750175501, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Gobline
+      objectReference: {fileID: 0}
     - target: {fileID: 755970487617222140, guid: 4212f7a9b2d479143b937b2a666d9e1b, type: 3}
       propertyPath: m_Name
       value: Gobline Interface

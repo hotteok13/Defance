@@ -925,8 +925,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1355752156040801493}
   - component: {fileID: 1355752156050670357}
-  - component: {fileID: -3960529858985284595}
   - component: {fileID: -3180784120539898456}
+  - component: {fileID: 589476213407560349}
   m_Layer: 6
   m_Name: Hapine
   m_TagString: Untagged
@@ -972,19 +972,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &-3960529858985284595
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1355752156041294005}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 0.5}
-  m_Center: {x: 0, y: 0, z: -0.1}
 --- !u!114 &-3180784120539898456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,7 +992,22 @@ MonoBehaviour:
   - serializedVersion: 2
     m_Bits: 64
   healthGauge: {fileID: 4586682568543878664}
+  attackRay: 3
   attack: 20
+--- !u!136 &589476213407560349
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355752156041294005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1355752156041294007
 GameObject:
   m_ObjectHideFlags: 0

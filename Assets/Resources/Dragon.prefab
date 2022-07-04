@@ -489,8 +489,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4409086171886001932}
   - component: {fileID: 4409086171893678660}
-  - component: {fileID: 5864347148224979492}
   - component: {fileID: 7071010334169375615}
+  - component: {fileID: 8867126029536721163}
   m_Layer: 6
   m_Name: Dragon
   m_TagString: Dragon
@@ -536,27 +536,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5864347148224979492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4409086171886164720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16aef1a5400f7174f9e50b367767cd9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  health: 300
-  layemask:
-  - serializedVersion: 2
-    m_Bits: 8
-  - serializedVersion: 2
-    m_Bits: 64
-  attack: 50
-  healthGauge: {fileID: 2607866636445896427}
 --- !u!65 &7071010334169375615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -568,8 +547,30 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 6, z: 14}
+  m_Size: {x: 4, y: 6, z: 13}
   m_Center: {x: 0, y: 3, z: 0}
+--- !u!114 &8867126029536721163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409086171886164720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b616fd1f614f2ec45a377e7b5fbe2d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  health: 300
+  layemask:
+  - serializedVersion: 2
+    m_Bits: 8
+  - serializedVersion: 2
+    m_Bits: 64
+  healthGauge: {fileID: 2607866636445896427}
+  attackRay: 13
+  attack: 50
 --- !u!1 &4409086171886165428
 GameObject:
   m_ObjectHideFlags: 0

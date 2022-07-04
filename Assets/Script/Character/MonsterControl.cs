@@ -13,6 +13,7 @@ public class MonsterControl : MonoBehaviour
     public LayerMask [] layemask;
     public int attack;
     public Slider healthGauge;
+    public float attackRay;
 
     private void Start()
     {
@@ -36,7 +37,7 @@ public class MonsterControl : MonoBehaviour
 
 
         healthGauge.value = health / 100;
-        if (Physics.Raycast(ray, out hit, 2.0f, layemask[0]))
+        if (Physics.Raycast(ray, out hit, attackRay, layemask[0]))
         {
             
             
@@ -55,7 +56,7 @@ public class MonsterControl : MonoBehaviour
 
 
         }
-        else if (Physics.Raycast(ray, out hit, 2.0f, layemask[1]))
+        else if (Physics.Raycast(ray, out hit, attackRay, layemask[1]))
         {
             speed = 0.0f;
             animator.SetBool("Attack", false);
