@@ -18,26 +18,46 @@ public class CreateMonster : MonoBehaviour
 
     public void Create(string name)
     {
+       
         switch (name)
         {
+            
             case "Gobline":
-                Instantiate(Resources.Load<GameObject>("Goblin_B"), new Vector3(0, 0, 13), Quaternion.Euler(0, 0, 0));
+                if (DataManager.instance.stuff.money >= 1000)
+                {
+                    Instantiate(Resources.Load<GameObject>("Goblin_B"), new Vector3(0, 0, 13), Quaternion.Euler(0, 0, 0));
 
-                StartCoroutine(Wait(3.0f, goblineButton));
+                    StartCoroutine(Wait(3.0f, goblineButton));
+                    DataManager.instance.stuff.money -= 1000;
+                }
                 break;
             case "Hapine":
-                Instantiate(Resources.Load<GameObject>("Hapine"), new Vector3(0, 2, 10), Quaternion.Euler(0, 0, 0));
+                if (DataManager.instance.stuff.money >= 2000)
+                {
+                    Instantiate(Resources.Load<GameObject>("Hapine"), new Vector3(0, 2, 10), Quaternion.Euler(0, 0, 0));
 
-                StartCoroutine(Wait(5.0f, hapineButton));
+                    StartCoroutine(Wait(5.0f, hapineButton));
+                    DataManager.instance.stuff.money -= 2000;
+                }
                 break;
             case "Dragon":
-                Instantiate(Resources.Load<GameObject>("Dragon"), new Vector3(0, 0, 13), Quaternion.Euler(0, 0, 0));
+                if (DataManager.instance.stuff.money >= 15000)
+                {
+                    Instantiate(Resources.Load<GameObject>("Dragon"), new Vector3(0, 0, 13), Quaternion.Euler(0, 0, 0));
 
-                StartCoroutine(Wait(25.0f, dragonButton));
+                    StartCoroutine(Wait(25.0f, dragonButton));
+                    DataManager.instance.stuff.money -= 15000;
+                }
+                
                 break;
             case "Reaper":
-                Instantiate(Resources.Load<GameObject>("Reaper"), new Vector3(0, 0, 10), Quaternion.Euler(0, 0, 0));
-                StartCoroutine(Wait(15.0f, reaperButton));
+                if (DataManager.instance.stuff.money >= 5000)
+                {
+                    Instantiate(Resources.Load<GameObject>("Reaper"), new Vector3(0, 0, 10), Quaternion.Euler(0, 0, 0));
+                    StartCoroutine(Wait(15.0f, reaperButton));
+                    DataManager.instance.stuff.money -= 5000;
+                }
+                
                 break;
 
         }

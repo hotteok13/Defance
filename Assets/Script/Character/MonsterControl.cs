@@ -27,7 +27,7 @@ public class MonsterControl : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if (health <= 0)
         {
-            DataManager.instance.MoneyIncrease(100);
+            DataManager.instance.MoneyIncrease(1500);
             Destroy(gameObject);
         }
 
@@ -46,8 +46,16 @@ public class MonsterControl : MonoBehaviour
                 // 현재 애니메이션의 진행도가 1보다 크거나 같다면 User Interface를 비활성화하도록 설계하였습니다.
                 if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
                 {
-                    animator.Rebind();
-                    hit.transform.GetComponent<Control>().health -= attack;
+                    if (hit.transform.GetComponent<BaseManager>())
+                    {
+                        animator.Rebind();
+                        hit.transform.GetComponent<BaseManager>().hp -= attack;
+                    }
+                    else
+                    {
+                        animator.Rebind();
+                        hit.transform.GetComponent<Control>().health -= attack;
+                    }
                     
                 }
             }

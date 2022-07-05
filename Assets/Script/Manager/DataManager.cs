@@ -19,15 +19,35 @@ public class DataManager : MonoBehaviour
 
     public Text moneyText;
 
+    public float timer;
+    
+
     private void Start()
     {
         instance = this;
         Load();
+        
     }
 
     private void Update()
     {
+        
         moneyText.text = stuff.money.ToString();
+        if (timer >= 1.0f)
+        {
+            timer = 0.0f;
+            stuff.money += 50;
+        }
+        timer+=Time.deltaTime;
+    }
+
+    IEnumerator Increase()
+    {
+        while (GameManager.instace.state)
+        {
+            yield return new WaitForSeconds(1f);
+            stuff.money += 50;
+        }
     }
 
     public void MoneyIncrease(int value)
